@@ -194,16 +194,20 @@ header {
         width: 60px;
     }
 
+    .banner {
+        height: 30vh;
+    }
+
     .filters {
         margin-top: 20px;
     }
     .filters select {
         padding: 5px 0;
-        font-size: 15px;
+        font-size: 16px;
     }
     .filters input {
         padding: 5px 20px;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .row {
@@ -221,6 +225,6 @@ header {
     }
     .card button {
         width: 95%;
-        font-size: 14px;
+        font-size: 16px;
     }
 }
