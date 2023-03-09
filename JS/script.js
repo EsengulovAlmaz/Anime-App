@@ -112,6 +112,8 @@ const database = [
 const container = document.querySelector(".row");
 const select = document.querySelector(".select");
 const search = document.querySelector(".search");
+const bars = document.querySelector(".bars");
+const sidebar = document.querySelector(".sidebar");
 
 window.addEventListener("load", () => {
     if (!localStorage.getItem("ninjas")) {
@@ -161,14 +163,22 @@ search.addEventListener("input", e => {
     const value = e.target.value.toLowerCase();
     const ninjas = JSON.parse(localStorage.getItem("ninjas"));
 
-    if(select.value === "Name"){
+    if (select.value === "Name") {
         const filtered = ninjas.filter(item => item.name.toLowerCase().includes(value))
         cardTemplate(filtered)
-    } else if(select.value === "Clan"){
-        const filtered = ninjas.filter(item => item.name.toLowerCase().includes(value))
+    } else if (select.value === "Clan") {
+        const filtered = ninjas.filter(item => item.clan.toLowerCase().includes(value))
         cardTemplate(filtered)
     } else {
-        const filtered = ninjas.filter(item => item.name.toLowerCase().includes(value))
+        const filtered = ninjas.filter(item => item.village.toLowerCase().includes(value))
         cardTemplate(filtered)
     }
+})
+
+bars.addEventListener("click", e => {
+    e.preventDefault()
+
+    bars.classList.toggle("activeBar")
+
+    sidebar.classList.toggle("activeSidebar");
 })

@@ -106,6 +106,56 @@ header {
     cursor: pointer;
 }
 
+aside {
+    width: 25%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0 0 5px white;
+    position: fixed;
+    left: -26%;
+    top: 0;
+    transition: .5s;
+    text-align: center;
+}
+.activeSidebar {
+    left: 0;
+}
+aside form input {
+    width: 80%;
+    padding: 15px 5px;
+    margin: 8px 0;
+    font-size: 17px;
+}
+aside form button {
+    padding: 12px 0;
+    width: 100px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    background-color: orange;
+    font-size: 17px;
+    color: white;
+    box-shadow: 0 0 5px orange;
+}
+.bars {
+    position: absolute;
+    right: -17%;
+    top: 5.5%;
+    cursor: pointer;
+    transition: .5s;
+}
+.activeBar {
+    right: 5%;
+    top: 4%;
+}
+.bars div {
+    width: 30px;
+    height: 3px;
+    background-color: orange;
+    box-shadow: 0 0 5px orange;
+    border-radius: 10px;
+    margin: 4px 0;
+}
 
 
 
@@ -124,6 +174,17 @@ header {
     .card {
         width: 44%;
     }
+
+    
+    aside form input {
+        padding: 10px 5px;
+    }
+    .bars {
+        top: 4.5%;
+    }
+    .activeBar {
+        top: 3%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -137,6 +198,17 @@ header {
     }
     .card button {
         padding: 8px 0;
+    }
+
+    aside {
+        left: -42.5%;
+        width: 40%;
+    }
+    .bars {
+        top: 7%;
+    }
+    .activeBar {
+        top: 4.5%;
     }
 }
 
@@ -178,6 +250,26 @@ header {
     }
     .card button {
         width: 95%;
+    }
+
+
+    aside h2 {
+        font-size: 18px;
+    }
+    aside form input {
+        font-size: 14px;
+    }
+    aside form button {
+        font-size: 14px;
+    }
+    .bars {
+        width: 15px;
+        top: 8%;
+        right: -25%;
+    }
+    .activeBar {
+        top: 2.5%;
+        right: 10%;
     }
 }
 
@@ -226,5 +318,10 @@ header {
     .card button {
         width: 95%;
         font-size: 16px;
+    }
+
+    .bars {
+        width: 5px;
+        height: 1px;
     }
 }
