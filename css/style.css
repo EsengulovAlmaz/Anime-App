@@ -92,6 +92,7 @@ header {
     height: 200px;
     border-radius: 10px;
     cursor: pointer;
+    object-fit: cover;
 }
 .card button {
     width: 100%;
@@ -320,8 +321,16 @@ aside form button {
         font-size: 16px;
     }
 
+    aside {
+        width: 65%;
+        left: -67%;
+    }
     .bars {
         width: 5px;
         height: 1px;
+        right: -13%;
+    }
+    .activeBar {
+        right: 11%;
     }
 }

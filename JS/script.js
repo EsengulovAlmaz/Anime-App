@@ -129,7 +129,7 @@ window.addEventListener("load", () => {
 
         const newNinjas = JSON.parse(localStorage.getItem("ninjas"));
 
-        cardTemplate(newNinjas)
+        cardTemplate(newNinjas);
     }
 });
 
@@ -141,13 +141,21 @@ function cardTemplate(base) {
 
                 <img src='${image}'>
 
-                <button>More</button>
+                <button onclick="More('${id}')">More</button>
             </div>
         `
     }).join(" ")
 
     container.innerHTML = template;
 };
+
+function More(id) {
+    const ninjas = JSON.parse(localStorage.getItem("ninjas"));
+    const founded = ninjas.find(item => item.id === parseInt(id));
+
+    localStorage.setItem("moreAboutNinjas", JSON.stringify(founded));
+    window.open("../more.html", "_self");
+}
 
 select.addEventListener("change", e => {
     const value = e.target.value;
@@ -157,7 +165,7 @@ select.addEventListener("change", e => {
     if (mode.includes(value)) {
         search.setAttribute("placeholder", `Search by ${value}`)
     }
-})
+});
 
 search.addEventListener("input", e => {
     const value = e.target.value.toLowerCase();
@@ -173,12 +181,49 @@ search.addEventListener("input", e => {
         const filtered = ninjas.filter(item => item.village.toLowerCase().includes(value))
         cardTemplate(filtered)
     }
-})
+});
 
 bars.addEventListener("click", e => {
-    e.preventDefault()
+    e.preventDefault();
 
-    bars.classList.toggle("activeBar")
+    bars.classList.toggle("activeBar");
 
     sidebar.classList.toggle("activeSidebar");
-})
+});
+
+const name = document.querySelector(".name");
+const power = document.querySelector(".power");
+const village = document.querySelector(".village");
+const clan = document.querySelector(".clan");
+const level = document.querySelector(".level");
+const image = document.querySelector(".image");
+
+const addNinja = document.querySelector(".addNinja");
+const error = document.querySelector(".error");
+
+addNinja.addEventListener("click", e => {
+    e.preventDefault();
+
+    if (name.value !== "" && image.value !== "") {
+        const ninjas = JSON.parse(localStorage.getItem("ninjas"));
+
+        localStorage.setItem("ninjas", JSON.stringify(
+            [
+                ...ninjas,
+                {
+                    name: name.value,
+                    power: power.value,
+                    village: village.value,
+                    clan: clan.value,
+                    level: level.value,
+                    image: image.value
+                }
+            ]
+        ))
+
+        window.location.reload();
+
+    } else {
+        error.innerHTML = "Все поля должны быть заполнены!"
+    }
+});
