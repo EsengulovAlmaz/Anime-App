@@ -227,3 +227,10 @@ addNinja.addEventListener("click", e => {
         error.innerHTML = "Все поля должны быть заполнены!"
     }
 });
+
+
+const sigIn = document.querySelector(".sigIn");
+
+sigIn.addEventListener("click", () => {
+    window.open("../register.html", "_self");
+});

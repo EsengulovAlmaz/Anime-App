@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.auth_wrapper {
+    text-align: center;
+    width: 50%;
+}
+.auth_wrapper h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.auth_wrapper .fullName input{
+    width: 24%;
+    padding: 16.5px 14px;
+    border: 1px solid rgb(118, 118, 118);
+    outline-color: rgb(79, 79, 255);
+    margin: 7px 3px;
+}
+.auth_wrapper div {
+    width: 100%;
+}
+.auth_wrapper input {
+    width: 54%;
+    padding: 16.5px 14px;
+    border: 1px solid rgb(118, 118, 118);
+    outline-color: #1976d2;
+    margin: 7px 0;
+}
+.auth_wrapper button {
+    width: 59%;
+    font-weight: 400;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 0;
+    outline: 0;
+    background-color: #1976d2;
+    color: white;
+    margin: 7px 0;
+}
+.auth_wrapper a {
+    color: #1976d2;
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+    .auth_wrapper .fullName input {
+        padding: 13px 14px;
+        width: 22%;
+    }
+    .auth_wrapper input {
+        padding: 13px 14px;
+    }
+}
+
+@media screen and (max-width: 768px)  {
+    .auth_wrapper .fullName input {
+        width: 21%;
+        padding: 10px 14px;
+    }
+    .auth_wrapper input {
+        padding: 10px 14px;
+    }
+    .auth_wrapper a {
+        font-size: 0.7em;
+    }
+}
+@media screen and (max-width: 426px) {
+    .auth_wrapper {
+        width: 90%;
+    }
+    .auth_wrapper .fullName input {
+        width: 22%;
+        font-size: 0.8em;
+    }
+    .auth_wrapper input {
+        font-size: 0.8em;
+    }
+    .auth_wrapper button {
+        font-size: 0.9em;
+    }
+}
