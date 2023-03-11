@@ -52,6 +52,9 @@ body {
     font-weight: 400;
     text-align: right;
 }
+.auth_wrapper .error {
+    color: red;
+}
 
 @media screen and (max-width: 768px) {
     .auth_wrapper .fullName input {
