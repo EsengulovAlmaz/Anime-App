@@ -22,3 +22,10 @@ signIn.addEventListener("click", e => {
         error.innerHTML = "Все поля должны быть заполнены!";
     }
 });
+
+
+window.addEventListener("load", () => {
+    if(localStorage.getItem("access_token") === "true") {
+        window.open("../index.html", "_self");
+    }
+})

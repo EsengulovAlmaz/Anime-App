@@ -34,7 +34,15 @@ header {
     border: 0;
     border-radius: 10px;
 }
-
+.material-symbols-outlined {
+    color: red;
+    cursor: pointer;
+}
+.navbar_header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
 .card {
     display: flex;
     align-items: flex-start;

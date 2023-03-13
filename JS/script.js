@@ -232,5 +232,13 @@ addNinja.addEventListener("click", e => {
 const sigIn = document.querySelector(".sigIn");
 
 sigIn.addEventListener("click", () => {
+    localStorage.clear();
     window.open("../register.html", "_self");
 });
+
+
+window.addEventListener("load", () => {
+    if (!localStorage.getItem("access_token")) {
+        window.open("../login.html", "_self");
+    }
+})
